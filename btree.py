@@ -183,7 +183,7 @@ def insert(node, key, value, child, key_index):
             return insert(parent, split_key, split_value,
                     right, parent.right_key_index(node_index))
         else:
-            return node.increase_height(left, right, split_key, split_value)
+            return make_root_node(left, right, split_key, split_value)
     else:
         node.keys[key_index:node.key_count + 1] = chain(
                 make_iterator(key),
